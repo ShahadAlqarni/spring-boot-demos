@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <title>thymeleaf Demo</title>
+</head>
+
+<body>
+Hello World of Spring Boot!
+
+<br><br>
+
+<!-- StudentName from the prever html code -->
+Student Name: <span th:text="${param.StudentName}">
+    </span>
+
+<br><br>
+<!-- StudentName from the contrller class to acss model as attribute name -->
+The message: <span th:text="${message}">
+    </span>
+</body>
+
+
+</html>

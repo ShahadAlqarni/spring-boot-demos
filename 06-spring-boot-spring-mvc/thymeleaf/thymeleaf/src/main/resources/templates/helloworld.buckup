@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <title>thymeleaf Demo</title>
+<link rel='stylesheet'
+      th:href="@{/demo.css}"/>
+</head>
+
+<body>
+<p th:text="'Hello, ' + ${theDate} + '!'" class="funny" />
+</body>
+
+
+</html>

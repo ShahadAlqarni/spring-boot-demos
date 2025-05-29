@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-boot">
+<head>
+    <title>Shahad Home Page</title>
+</head>
+<body>
+
+<h1>Welcome to My Website</h1>
+
+<h2> This demo </h2>
+<hr>
+Hello everyone!!! WWWOOOOWW !
+
+<hr>
+
+
+<!-- display user name and role -->
+
+<p>
+    User: <span sec:authentication="principal.username"></span>
+    <br><br>
+    Role(s): <span sec:authentication="principal.authorities"></span>
+</p>
+
+<!-- use div to only show this to MANAGER role -->
+<div sec:authorize="hasRole('MANAGER')">
+<!-- Add a link to point to /leaders ... this is for the manager -->
+<p>
+    <a th:href="@{/leaders}">Leading Meeting</a>
+    (Only for Manger peeps)
+</p>
+</div>
+
+<!-- use div to only show this to ADMIN role -->
+<div sec:authorize="hasRole('ADMIN')">
+<!-- Add a link to point to /system ... this is for the admin -->
+<p>
+    <a th:href="@{/systems}">IT system Meeting</a>
+    (Only for Admin peeps)
+</p>
+</div>
+
+<hr>
+
+<!-- Add a logout button -->
+<form action="#" th:action="@{/logout}" method="POST">
+
+    <input type="submit" value="Logout" />
+</form>
+
+
+</body>
+</html>
